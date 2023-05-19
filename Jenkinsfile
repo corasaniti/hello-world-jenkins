@@ -5,13 +5,21 @@ pipeline {
         stage('Start') {
             steps {
                 echo 'Pipeline stage Start from git repo...'
-                echo "Datetime: ${env.BUILD_TIMESTAMP}"
+               script {
+                    def timestamp = currentTimestamp()
+                    def formattedTimestamp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX").format(timestamp)
+                    echo "Timestamp: ${formattedTimestamp}"
+                }
             }
         }
         stage('End') {
             steps {
                 echo 'Pipeline stage End from git repo...'
-                echo "Datetime: ${env.BUILD_TIMESTAMP}"
+                script {
+                    def timestamp = currentTimestamp()
+                    def formattedTimestamp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX").format(timestamp)
+                    echo "Timestamp: ${formattedTimestamp}"
+                }
             }
         }        
     }

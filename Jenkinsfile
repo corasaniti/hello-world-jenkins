@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Start') {
             steps {
-                echo 'Start pipeline...'
+                echo 'Pipeline stage Start from git repo...'
             }
         }
         stage('End') {
             steps {
-                echo 'End pipeline...'
+                echo 'Pipeline stage End from git repo...'
             }
         }        
     }
